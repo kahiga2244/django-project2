@@ -15,3 +15,28 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 import random
+
+
+def index(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+    else:
+        form = PostForm()
+
+    try:
+        posts = Post.objects.all()
+        posts = posts[::-1]
+        a_post = random.randint(0, abs(len(posts)-1))
+        try:
+            random_post = posts[a_post]
+            print(random_post.photo)
+        except IndexError:
+            random_post = 'null'
+        
+    except Post.DoesNotExist:
+        posts = None
+    return render(request, 'index.html', {'posts': posts, 'form': form, 'random_post': random_post})
