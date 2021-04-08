@@ -24,7 +24,7 @@ To get the project .......
 ##### Cloning the repository:
 
 ```bash
-https://github.com/default-007/awwwards.git
+https://github.com/kahiga2244/awards.git
 ```
 
 ##### Navigate into the folder and install requirements
