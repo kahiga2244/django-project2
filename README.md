@@ -25,7 +25,7 @@ To get the project .......
 
 
 ```bash
-https://github.com/kahiga2244/awards.git
+https://github.com/kahiga2244/django-project2.git
 ```
 
 ##### Navigate into the folder and install requirements
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 SetUp your database User,Password, Host then make migrate
 
 ```bash
-python manage.py makemigrations instagram
+python manage.py makemigrations awards
 ```
 
 Now Migrate
